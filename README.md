@@ -2,7 +2,7 @@
   Iniciador API Project
 </h3>
 
-<p align="center">An rest api for bank account requests.</p>
+<p align="center">An rest api for pets crud.</p>
 
 <p align="center">
   <a href="#%EF%B8%8F-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -14,11 +14,7 @@
 
 ## 🏦 About the project
 
-This api contains services needed to transfer money and generate bills.
-
-Account holders can transfer amounts to other holders, even from other banks.
-
-Typeable lines of bills of exchange can be generated and verified.
+This api contains pet crud and authentication services.
 
 ## 🚀 Technologies
 
@@ -76,9 +72,11 @@ $ yarn start:dev:auth
 
 I used [swagger](https://swagger.io/) to document the API. You can use this routes to test the app
 
-- `localhost:3000/api`: this route contains the services of the api.;
-
 - `localhost:3001/auth`: this route contains the services of the auth.;
+
+> Obs.: check the routes that need the auth token
+
+- `localhost:3000/api`: this route contains the services of the api.;
 
 ## 🤔 How to contribute
 
