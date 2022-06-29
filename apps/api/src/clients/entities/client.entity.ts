@@ -11,6 +11,13 @@ import {
 
 @Entity('clients')
 export class Client {
+  constructor(client?: Client) {
+    this.clientId = client?.clientId;
+    this.email = client?.email;
+    this.secret = client?.secret;
+    this.hashPassword = client?.hashPassword;
+  }
+
   @PrimaryGeneratedColumn({ name: 'client_id' })
   clientId: number;
 

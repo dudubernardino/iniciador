@@ -5,7 +5,6 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { timeStamp } from 'console';
 import { Repository } from 'typeorm';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
@@ -41,7 +40,13 @@ export class ClientService {
       secret: dto.secret,
     });
 
-    await this.clientRepo.save(client);
+    try {
+      await this.clientRepo.save(client);
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Não foi possível criar o cliente',
+      );
+    }
 
     return client;
   }
@@ -93,7 +98,13 @@ export class ClientService {
     if (dto.email) client.email = dto.email;
     if (dto.secret) client.secret = dto.secret;
 
-    await this.clientRepo.save(client);
+    try {
+      await this.clientRepo.save(client);
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Não foi possível atualizar o cliente.',
+      );
+    }
 
     return client;
   }
@@ -113,12 +124,13 @@ export class ClientService {
 
     if (!client) throw new NotFoundException('Cliente não encontrado.');
 
-    const result = await this.clientRepo.remove(client);
-
-    if (!result)
+    try {
+      await this.clientRepo.remove(client);
+    } catch (error) {
       throw new InternalServerErrorException(
         'Não foi possível remover o cliente',
       );
+    }
 
     return true;
   }
