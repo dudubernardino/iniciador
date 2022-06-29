@@ -44,7 +44,7 @@ describe('ClientController', () => {
       secret: 'secret',
     };
 
-    it('should create a user', async () => {
+    it('should create a client', async () => {
       const result = await controller.create(dto);
 
       expect(result).toBeInstanceOf(Client);
@@ -54,7 +54,7 @@ describe('ClientController', () => {
   describe('find', () => {
     const clientId = 1;
 
-    it('should return a user', async () => {
+    it('should return a client', async () => {
       const result = await controller.find(clientId);
 
       expect(result).toBeInstanceOf(Client);
@@ -62,7 +62,7 @@ describe('ClientController', () => {
   });
 
   describe('find', () => {
-    it('should return all user', async () => {
+    it('should return all clients', async () => {
       const result = await controller.findAll();
 
       expect(result.length).toBe(2);
@@ -76,7 +76,7 @@ describe('ClientController', () => {
       secret: 'secret',
     };
 
-    it('should update a user', async () => {
+    it('should update a client', async () => {
       const result = await controller.update(clientId, dto);
 
       expect(result).toBeInstanceOf(Client);
@@ -86,7 +86,7 @@ describe('ClientController', () => {
   describe('delete', () => {
     const clientId = 1;
 
-    it('should delete a user', async () => {
+    it('should delete a client', async () => {
       const result = await controller.delete(clientId);
 
       expect(result).toBe(true);

@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ClientModule } from './clients/client.module';
 import { Client } from './clients/entities/client.entity';
+import { Shoe } from './shoes/entities/shoes.entity';
+import { ShoeModule } from './shoes/shoes.module';
 
 @Module({
   imports: [
@@ -16,11 +18,12 @@ import { Client } from './clients/entities/client.entity';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      entities: [Client],
+      entities: [Client, Shoe],
       synchronize: process.env.POSTGRES_SYNC === 'true',
       logging: true,
     }),
     ClientModule,
+    ShoeModule,
   ],
   controllers: [],
   providers: [],

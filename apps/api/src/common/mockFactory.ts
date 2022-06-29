@@ -1,4 +1,5 @@
 import { Client } from '../clients/entities/client.entity';
+import { Shoe } from '../shoes/entities/shoes.entity';
 
 export default class MockFacktory {
   static getClient(): Client {
@@ -10,5 +11,17 @@ export default class MockFacktory {
     });
 
     return client;
+  }
+
+  static getShoe(): Shoe {
+    const shoe = new Shoe({
+      shoeId: 1,
+      brand: 'test',
+      color: 'test',
+      price: 1,
+      size: 1,
+    });
+
+    return shoe;
   }
 }

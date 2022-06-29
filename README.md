@@ -2,7 +2,7 @@
   Iniciador API Project
 </h3>
 
-<p align="center">An rest api for pets crud.</p>
+<p align="center">An rest api for shoes crud.</p>
 
 <p align="center">
   <a href="#%EF%B8%8F-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -14,7 +14,7 @@
 
 ## 🏦 About the project
 
-This api contains pet crud and authentication services.
+This api contains shoes crud and authentication services.
 
 ## 🚀 Technologies
 
@@ -76,7 +76,18 @@ I used [swagger](https://swagger.io/) to document the API. You can use this rout
 
 > Obs.: check the routes that need the auth token
 
-- `localhost:3000/api`: this route contains the services of the api.;
+- `localhost:3000/api/clients`: this route contains the clients services of the api.;
+- `localhost:3000/api/shoes`: this route contains the shoes services of the api.;
+
+To run the tests use the commands below
+
+```bash
+$ yarn test
+```
+
+```bash
+$ yarn test:cov
+```
 
 ## 🤔 How to contribute
 
