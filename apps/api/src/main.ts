@@ -29,7 +29,7 @@ async function bootstrap() {
   SwaggerModule.setup('api/clients', app, clientsDocument);
 
   const shoesConfig = new DocumentBuilder()
-    .setTitle('Iniciador API - Clients')
+    .setTitle('Iniciador API - Shoes')
     .setVersion('1.0')
     .addBearerAuth(
       {
